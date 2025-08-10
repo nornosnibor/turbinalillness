@@ -1,0 +1,54 @@
+:root{
+  --bg: #000;
+  --green: #00ff66;
+  --glow: #003b24;
+}
+*{ box-sizing:border-box }
+html, body{ height:100% }
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--green);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+  overflow:hidden;
+}
+#matrix{ display:block; width:100vw; height:100vh; background:#000; }
+.overlay{
+  position: fixed; inset: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  pointer-events: none;
+}
+#title{
+  align-self: center;
+  justify-self: center;
+  font-size: clamp(28px, 5vw, 72px);
+  letter-spacing: .08em;
+  text-shadow: 0 0 16px var(--glow);
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity .6s ease, transform .6s ease;
+}
+#count{
+  align-self: center;
+  justify-self: center;
+  font-size: clamp(64px, 16vw, 220px);
+  line-height: 1;
+  font-weight: 900;
+  text-shadow: 0 0 24px var(--glow);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.hidden{ opacity:0 }
+.show{ opacity:1; transform: scale(1) }
+.back{
+  pointer-events: auto;
+  justify-self: center;
+  margin-bottom: 24px;
+  color: var(--green);
+  text-decoration: none;
+  border: 1px solid #0a4;
+  padding: 6px 10px;
+}
+.back:hover{ text-decoration: underline }

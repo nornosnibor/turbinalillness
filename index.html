@@ -10,19 +10,20 @@
   <div id="crt-overlay"></div>
   <main id="terminal" aria-label="Retro terminal">
     <header class="banner">
-      <div class="brand">RONNY-TERM v1.0</div>
-      <nav class="quick-links">
-        <!-- Inline "buttons" that are actually links -->
-        <a href="#about" class="btn-link" data-cmd="about">[ ABOUT ]</a>
-        <a href="#projects" class="btn-link" data-cmd="projects">[ PROJECTS ]</a>
-        <a href="#contact" class="btn-link" data-cmd="contact">[ CONTACT ]</a>
-        <a href="#links" class="btn-link" data-cmd="links">[ LINKS ]</a>
-      </nav>
+      <div class="brand">RONNY-TERM v2.2</div>
+      <nav class="quick-links" id="quick-links"></nav>
+      <a href="matrix.html" class="btn-link">[ EPIC ]</a>
+      <a href="#" id="lamps-test" class="btn-link">[ LAMPS TEST ]</a>
+      <div class="theme-switch" aria-label="Theme">
+        <button class="btn-link small" data-theme="green">[ GREEN ]</button>
+        <button class="btn-link small" data-theme="amber">[ AMBER ]</button>
+        <button class="btn-link small" data-theme="phosphor">[ PHOSPHOR ]</button>
+      </div>
     </header>
 
     <section id="screen" role="log" aria-live="polite" aria-relevant="additions">
-      <pre class="line boot">Booting RONNY-TERM... OK</pre>
-      <pre class="line boot">Type <span class="cmd">help</span> to see available commands.</pre>
+      <pre class="line boot">Booting RONNY-TERM v2.2... OK</pre>
+      <pre class="line boot">Type <span class="cmd">help</span>. Try <span class="cmd">[ EPIC ]</span> for drama. Psst: <span class="cmd">[ LAMPS TEST ]</span>.</pre>
     </section>
 
     <form id="input-form" autocomplete="off" aria-label="Command input">

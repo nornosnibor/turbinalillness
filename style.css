@@ -1,0 +1,142 @@
+/* ===== Retro terminal theme ===== */
+:root{
+  --bg: #000000;
+  --fg: #00ff88;
+  --fg-dim:#00c06a;
+  --accent:#00ff00;
+  --shadow:#003b24;
+  --scanline: rgba(255,255,255,0.025);
+  --font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  line-height: 1.45;
+  text-shadow: 0 0 6px var(--shadow);
+  overflow: hidden;
+}
+
+/* Subtle CRT glow + scanlines */
+#crt-overlay{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    var(--scanline) 3px,
+    transparent 4px
+  );
+  mix-blend-mode: plus-lighter;
+  opacity: .6;
+}
+
+#terminal{
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 16px;
+}
+
+.banner{
+  display:flex;
+  align-items:center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--fg-dim);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+.brand{ letter-spacing:.1em; }
+.quick-links{
+  display:flex;
+  gap:.5rem;
+  flex-wrap: wrap;
+}
+.btn-link{
+  color: var(--fg);
+  text-decoration: none;
+  padding: 0 .25rem;
+  border: 1px solid var(--fg-dim);
+  display:inline-block;
+  line-height: 1.2;
+}
+.btn-link:hover,
+.btn-link:focus{
+  outline: none;
+  background: rgba(0,255,136,.08);
+  border-color: var(--accent);
+  text-decoration: underline;
+}
+
+#screen{
+  overflow: auto;
+  padding: 8px 0;
+}
+.line{
+  margin: 0;
+  white-space: pre-wrap;
+}
+.cmd{ color: var(--accent); text-decoration: underline; }
+
+/* Input row */
+#input-form{
+  display:flex;
+  gap:.5rem;
+  align-items:center;
+  border-top: 1px solid var(--fg-dim);
+  padding-top: 8px;
+}
+.prompt{
+  min-width: 10ch;
+  color: var(--fg-dim);
+}
+.input-wrap{
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+#input{
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  caret-color: transparent; /* hide system caret */
+  letter-spacing: .02em;
+}
+.cursor{
+  position: absolute;
+  height: 1.2em;
+  width: .6ch;
+  margin-left: 0.1ch;
+  background: var(--accent);
+  animation: blink 1s steps(1) infinite;
+  transform: translateX(0);
+}
+@keyframes blink{
+  50% { opacity: 0; }
+}
+
+/* Scrollbar styling for the screen area */
+#screen::-webkit-scrollbar{ width: 10px; }
+#screen::-webkit-scrollbar-thumb{
+  background: var(--fg-dim);
+  border-left: 2px solid transparent;
+}
+#screen::-webkit-scrollbar-track{ background: transparent; }
+
+/* Link styling as terminal text */
+a.inline{
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent);
+}
+a.inline:hover{ text-decoration: underline; }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ronny // Retro Terminal</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="crt-overlay"></div>
+  <main id="terminal" aria-label="Retro terminal">
+    <header class="banner">
+      <div class="brand">RONNY-TERM v1.0</div>
+      <nav class="quick-links">
+        <!-- Inline "buttons" that are actually links -->
+        <a href="#about" class="btn-link" data-cmd="about">[ ABOUT ]</a>
+        <a href="#projects" class="btn-link" data-cmd="projects">[ PROJECTS ]</a>
+        <a href="#contact" class="btn-link" data-cmd="contact">[ CONTACT ]</a>
+        <a href="#links" class="btn-link" data-cmd="links">[ LINKS ]</a>
+      </nav>
+    </header>
+
+    <section id="screen" role="log" aria-live="polite" aria-relevant="additions">
+      <pre class="line boot">Booting RONNY-TERM... OK</pre>
+      <pre class="line boot">Type <span class="cmd">help</span> to see available commands.</pre>
+    </section>
+
+    <form id="input-form" autocomplete="off" aria-label="Command input">
+      <label for="input" class="prompt" aria-hidden="true">ronny@home:~$</label>
+      <div class="input-wrap">
+        <input id="input" name="input" type="text" spellcheck="false" autofocus />
+        <span class="cursor" aria-hidden="true"></span>
+      </div>
+    </form>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

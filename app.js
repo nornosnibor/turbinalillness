@@ -38,6 +38,7 @@ function updateCursor(){
 }
 
 let history = []; let hIndex = -1;
+let lampsMode = false; let lampsPrevTheme = null;
 function print(html){ const line = document.createElement('pre'); line.className='line'; line.innerHTML = html; screenEl.appendChild(line); screenEl.scrollTop = screenEl.scrollHeight; }
 function printPrompt(cmd){ const p = document.createElement('pre'); p.className='line'; p.innerHTML = `<span class="prompt">ronny@home:~$</span> ${cmd}`; screenEl.appendChild(p); }
 function parseArgs(str){ const re = /"([^"]+)"|(\S+)/g; const out=[]; let m; while((m=re.exec(str))) out.push(m[1]||m[2]); return out; }
@@ -155,8 +156,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
   if (lamps){
     lamps.addEventListener('click', (e)=>{
       e.preventDefault();
-      setTheme('amber');
-      print('Diagnostics: amber phosphor engaged.');
+      if (!lampsMode){
+        lampsPrevTheme = loadTheme();
+        setTheme('amber');
+        print('Diagnostics: amber phosphor engaged.');
+      } else {
+        setTheme(lampsPrevTheme || 'green');
+        print('Diagnostics: original phosphor restored.');
+      }
+      lampsMode = !lampsMode;
     });
   }
 });

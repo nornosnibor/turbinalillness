@@ -11,8 +11,10 @@
 :root.theme-green{ --fg:#00ff88; --fg-dim:#00c06a; --accent:#00ff00; --shadow:#003b24; }
 :root.theme-phosphor{ --fg:#7CFFA1; --fg-dim:#5ad08a; --accent:#B2FFBA; --shadow:#214d35; }
 *{ box-sizing:border-box } html,body{ height:100% }
-body{ margin:0; background:var(--bg); color:var(--fg); font-family:var(--font); line-height:1.45; text-shadow:0 0 6px var(--shadow); overflow:hidden }
+body{ margin:0; background:var(--bg); color:var(--fg); font-family:var(--font); line-height:1.45; text-shadow:0 0 6px var(--shadow); overflow:auto }
 #crt-overlay{ position:fixed; inset:0; pointer-events:none; background:repeating-linear-gradient(to bottom,transparent 0px,transparent 2px,var(--scanline) 3px,transparent 4px); mix-blend-mode:plus-lighter; opacity:.6 }
+#page-title{ text-align:center; margin:16px 0; font-size:2.5rem; color:var(--fg) }
+#about-rahn{ max-width:600px; margin:0 auto 24px; text-align:center }
 #terminal{ height:100%; display:grid; grid-template-rows:auto 1fr auto; padding:16px; gap:8px }
 .banner{ display:flex; align-items:center; gap:1rem; border-bottom:1px solid var(--fg-dim); padding-bottom:8px; flex-wrap:wrap }
 .brand{ letter-spacing:.1em }

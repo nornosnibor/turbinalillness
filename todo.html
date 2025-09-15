@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo Scheduler</title>
+  <link rel="stylesheet" href="todo.css" />
+</head>
+<body>
+  <header>
+    <h1>Todo Scheduler</h1>
+    <p>Type a task and press Enter. Drag tasks to schedule.</p>
+  </header>
+
+  <section id="add-task">
+    <input id="task-input" type="text" placeholder="New task" />
+  </section>
+
+  <section id="lists">
+    <div class="list">
+      <h2>Inbox</h2>
+      <ul id="inbox-list" class="drop-zone"></ul>
+    </div>
+    <div class="list">
+      <h2>Tomorrow</h2>
+      <ul id="tomorrow-list" class="drop-zone"></ul>
+    </div>
+    <div class="list">
+      <h2>Next Week</h2>
+      <ul id="nextweek-list" class="drop-zone"></ul>
+    </div>
+  </section>
+
+  <section id="week-view">
+    <button id="week-prev" aria-label="Previous week">&lt;</button>
+    <div id="week-days"></div>
+    <button id="week-next" aria-label="Next week">&gt;</button>
+  </section>
+
+  <div id="backlog" hidden></div>
+
+  <script src="todo.js"></script>
+</body>
+</html>

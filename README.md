@@ -11,8 +11,9 @@ A single-page, static website that looks and behaves like an old-school terminal
 - 100% static: just open `index.html`
 
 ## How to Use
-1. Open `index.html` in your browser to test locally.
-2. Deploy anywhere static (GitHub Pages, Netlify, Vercel).
+1. Open `index.html` in your browser to test the retro terminal.
+2. Open `todo.html` for a simple drag-and-drop todo scheduler.
+3. Deploy anywhere static (GitHub Pages, Netlify, Vercel).
 
 ### Deploy to GitHub Pages (quick)
 - Create a new GitHub repo, add these files, commit & push.

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SVG Shape Generator</title>
+  <link rel="stylesheet" href="svg-generator.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>SVG Shape Generator</h1>
+      <p>Create simple SVG shapes with intuitive sliders, preview them instantly, and download the artwork.</p>
+    </header>
+
+    <section class="app__content">
+      <form class="controls" id="shape-form">
+        <div class="control control--full">
+          <label for="shape-select">Shape</label>
+          <select id="shape-select" name="shape">
+            <option value="rect">Rectangle</option>
+            <option value="circle">Circle</option>
+            <option value="ellipse">Ellipse</option>
+            <option value="polygon">Polygon</option>
+          </select>
+        </div>
+
+        <fieldset class="control-group" id="dimension-controls" aria-label="Shape dimensions"></fieldset>
+
+        <div class="control">
+          <label for="fill-color">Fill</label>
+          <input type="color" id="fill-color" name="fill" value="#3182ce" />
+        </div>
+
+        <div class="control">
+          <label for="stroke-color">Stroke</label>
+          <input type="color" id="stroke-color" name="stroke" value="#1a202c" />
+        </div>
+
+        <div class="control">
+          <label for="stroke-width">Stroke Width</label>
+          <input type="range" id="stroke-width" name="strokeWidth" min="0" max="20" value="2" />
+          <output for="stroke-width" id="stroke-width-output">2</output>
+        </div>
+
+        <button type="button" class="button" id="download-btn">Download SVG</button>
+      </form>
+
+      <section class="preview" aria-label="SVG preview">
+        <div class="preview__frame">
+          <svg id="preview-svg" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 300 300">
+            <title>Generated shape preview</title>
+          </svg>
+        </div>
+        <textarea class="preview__code" id="svg-code" readonly aria-label="SVG code"></textarea>
+      </section>
+    </section>
+  </main>
+
+  <script src="svg-generator.js"></script>
+</body>
+</html>

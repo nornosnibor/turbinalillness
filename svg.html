@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SVG Playground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="svg.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">◆</span>
+        <div class="brand-copy">
+          <h1>SVG Playground</h1>
+          <p>Craft scalable vector graphics visually and export clean markup.</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="link" href="index.html">Retro Terminal</a>
+        <a class="link" href="matrix.html">Matrix Rain</a>
+        <a class="link" href="todo.html">Task Board</a>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>Canvas</h2>
+        <div class="field-grid">
+          <label class="field">
+            <span>Width</span>
+            <input id="canvas-width" type="number" min="1" step="1" value="600" />
+          </label>
+          <label class="field">
+            <span>Height</span>
+            <input id="canvas-height" type="number" min="1" step="1" value="400" />
+          </label>
+          <label class="field">
+            <span>Background</span>
+            <input id="canvas-background" type="color" value="#0f172a" />
+          </label>
+          <label class="field">
+            <span>Grid</span>
+            <select id="canvas-grid">
+              <option value="none">None</option>
+              <option value="dots">Dots</option>
+              <option value="lines">Lines</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Add Shape</h2>
+          <button id="clear-shapes" type="button" class="ghost">Clear All</button>
+        </div>
+        <form id="shape-form" class="shape-form">
+          <label class="field">
+            <span>Type</span>
+            <select id="shape-type">
+              <option value="rectangle">Rectangle</option>
+              <option value="circle">Circle</option>
+              <option value="ellipse">Ellipse</option>
+              <option value="line">Line</option>
+              <option value="polygon">Polygon</option>
+              <option value="text">Text</option>
+            </select>
+          </label>
+          <div id="shape-fields" class="shape-fields"></div>
+          <button type="submit" class="primary">Add to Canvas</button>
+        </form>
+        <div id="shape-list" class="shape-list" aria-live="polite"></div>
+      </section>
+
+      <section class="panel panel-preview">
+        <div class="panel-head">
+          <h2>Preview</h2>
+          <button id="download-svg" type="button" class="ghost">Download SVG</button>
+        </div>
+        <div id="preview-wrap" class="preview-wrap" aria-live="polite"></div>
+        <div class="code-block">
+          <div class="code-head">
+            <span>SVG Markup</span>
+            <button id="copy-code" type="button" class="ghost">Copy</button>
+          </div>
+          <textarea id="code-output" readonly spellcheck="false"></textarea>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <template id="shape-row-template">
+    <div class="shape-row">
+      <div class="shape-summary"></div>
+      <div class="shape-actions">
+        <button data-action="edit" type="button" class="ghost">Edit</button>
+        <button data-action="delete" type="button" class="ghost destructive">Delete</button>
+      </div>
+    </div>
+  </template>
+
+  <dialog id="edit-dialog">
+    <form method="dialog" class="dialog">
+      <header>
+        <h3>Edit Shape</h3>
+      </header>
+      <div class="dialog-body">
+        <div id="edit-fields" class="shape-fields"></div>
+      </div>
+      <footer class="dialog-footer">
+        <button value="cancel" class="ghost">Cancel</button>
+        <button value="confirm" class="primary">Save changes</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="svg.js" type="module"></script>
+</body>
+</html>

@@ -12,8 +12,9 @@ A single-page, static website that looks and behaves like an old-school terminal
 
 ## How to Use
 1. Open `index.html` in your browser to test the retro terminal.
-2. Open `todo.html` for a simple drag-and-drop todo scheduler.
-3. Deploy anywhere static (GitHub Pages, Netlify, Vercel).
+2. Open `svg.html` for a modern SVG playground with live preview and export tools.
+3. Open `todo.html` for a simple drag-and-drop todo scheduler.
+4. Deploy anywhere static (GitHub Pages, Netlify, Vercel).
 
 ### Deploy to GitHub Pages (quick)
 - Create a new GitHub repo, add these files, commit & push.
@@ -23,6 +24,7 @@ A single-page, static website that looks and behaves like an old-school terminal
 ## Customize
 - Edit text, links, or commands in `app.js` (look for the `commands` object).
 - Update colors and effects in `style.css`.
+- Try the SVG generator UI in `svg.html` with styles in `svg.css` and behaviors in `svg.js`.
 
 
 ---

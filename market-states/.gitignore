@@ -1,0 +1,12 @@
+# Fetched and generated data. The raw cache is reproducible from the API and
+# the fixture is reproducible from dev/make_fixture.py, so neither belongs in
+# version control.
+data/
+data_fixture/
+
+# ...except the state map itself, which is the readable deliverable of this
+# phase and is only 120 rows.
+!data/output/
+!data/output/states.csv
+__pycache__/
+*.pyc

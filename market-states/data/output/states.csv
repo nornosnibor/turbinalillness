@@ -1,0 +1,121 @@
+state_id,name,price_vs_ema9,ema9_vs_ema50,price_vs_vwap,volume_bucket,time_bucket,bar_count,pct_of_bars
+0,downtrend | below VWAP | low volume | open30,below,below,below,low,open30,501,0.579
+1,downtrend bounce | below VWAP | low volume | open30,above,below,below,low,open30,95,0.11
+2,uptrend pullback | below VWAP | low volume | open30,below,above,below,low,open30,350,0.404
+3,uptrend | below VWAP | low volume | open30,above,above,below,low,open30,306,0.353
+4,downtrend | above VWAP | low volume | open30,below,below,above,low,open30,199,0.23
+5,downtrend bounce | above VWAP | low volume | open30,above,below,above,low,open30,277,0.32
+6,uptrend pullback | above VWAP | low volume | open30,below,above,above,low,open30,139,0.161
+7,uptrend | above VWAP | low volume | open30,above,above,above,low,open30,977,1.128
+8,downtrend | below VWAP | normal volume | open30,below,below,below,normal,open30,634,0.732
+9,downtrend bounce | below VWAP | normal volume | open30,above,below,below,normal,open30,83,0.096
+10,uptrend pullback | below VWAP | normal volume | open30,below,above,below,normal,open30,361,0.417
+11,uptrend | below VWAP | normal volume | open30,above,above,below,normal,open30,273,0.315
+12,downtrend | above VWAP | normal volume | open30,below,below,above,normal,open30,180,0.208
+13,downtrend bounce | above VWAP | normal volume | open30,above,below,above,normal,open30,337,0.389
+14,uptrend pullback | above VWAP | normal volume | open30,below,above,above,normal,open30,111,0.128
+15,uptrend | above VWAP | normal volume | open30,above,above,above,normal,open30,942,1.088
+16,downtrend | below VWAP | high volume | open30,below,below,below,high,open30,257,0.297
+17,downtrend bounce | below VWAP | high volume | open30,above,below,below,high,open30,35,0.04
+18,uptrend pullback | below VWAP | high volume | open30,below,above,below,high,open30,135,0.156
+19,uptrend | below VWAP | high volume | open30,above,above,below,high,open30,67,0.077
+20,downtrend | above VWAP | high volume | open30,below,below,above,high,open30,64,0.074
+21,downtrend bounce | above VWAP | high volume | open30,above,below,above,high,open30,83,0.096
+22,uptrend pullback | above VWAP | high volume | open30,below,above,above,high,open30,17,0.02
+23,uptrend | above VWAP | high volume | open30,above,above,above,high,open30,237,0.274
+24,downtrend | below VWAP | low volume | morning,below,below,below,low,morning,1574,1.818
+25,downtrend bounce | below VWAP | low volume | morning,above,below,below,low,morning,881,1.018
+26,uptrend pullback | below VWAP | low volume | morning,below,above,below,low,morning,464,0.536
+27,uptrend | below VWAP | low volume | morning,above,above,below,low,morning,275,0.318
+28,downtrend | above VWAP | low volume | morning,below,below,above,low,morning,225,0.26
+29,downtrend bounce | above VWAP | low volume | morning,above,below,above,low,morning,426,0.492
+30,uptrend pullback | above VWAP | low volume | morning,below,above,above,low,morning,1408,1.626
+31,uptrend | above VWAP | low volume | morning,above,above,above,low,morning,3013,3.48
+32,downtrend | below VWAP | normal volume | morning,below,below,below,normal,morning,2403,2.775
+33,downtrend bounce | below VWAP | normal volume | morning,above,below,below,normal,morning,1069,1.235
+34,uptrend pullback | below VWAP | normal volume | morning,below,above,below,normal,morning,474,0.547
+35,uptrend | below VWAP | normal volume | morning,above,above,below,normal,morning,224,0.259
+36,downtrend | above VWAP | normal volume | morning,below,below,above,normal,morning,295,0.341
+37,downtrend bounce | above VWAP | normal volume | morning,above,below,above,normal,morning,466,0.538
+38,uptrend pullback | above VWAP | normal volume | morning,below,above,above,normal,morning,1252,1.446
+39,uptrend | above VWAP | normal volume | morning,above,above,above,normal,morning,3195,3.69
+40,downtrend | below VWAP | high volume | morning,below,below,below,high,morning,816,0.942
+41,downtrend bounce | below VWAP | high volume | morning,above,below,below,high,morning,304,0.351
+42,uptrend pullback | below VWAP | high volume | morning,below,above,below,high,morning,94,0.109
+43,uptrend | below VWAP | high volume | morning,above,above,below,high,morning,39,0.045
+44,downtrend | above VWAP | high volume | morning,below,below,above,high,morning,56,0.065
+45,downtrend bounce | above VWAP | high volume | morning,above,below,above,high,morning,111,0.128
+46,uptrend pullback | above VWAP | high volume | morning,below,above,above,high,morning,223,0.258
+47,uptrend | above VWAP | high volume | morning,above,above,above,high,morning,693,0.8
+48,downtrend | below VWAP | low volume | midday,below,below,below,low,midday,2231,2.577
+49,downtrend bounce | below VWAP | low volume | midday,above,below,below,low,midday,1374,1.587
+50,uptrend pullback | below VWAP | low volume | midday,below,above,below,low,midday,593,0.685
+51,uptrend | below VWAP | low volume | midday,above,above,below,low,midday,930,1.074
+52,downtrend | above VWAP | low volume | midday,below,below,above,low,midday,1111,1.283
+53,downtrend bounce | above VWAP | low volume | midday,above,below,above,low,midday,760,0.878
+54,uptrend pullback | above VWAP | low volume | midday,below,above,above,low,midday,2292,2.647
+55,uptrend | above VWAP | low volume | midday,above,above,above,low,midday,3774,4.359
+56,downtrend | below VWAP | normal volume | midday,below,below,below,normal,midday,3812,4.403
+57,downtrend bounce | below VWAP | normal volume | midday,above,below,below,normal,midday,1977,2.283
+58,uptrend pullback | below VWAP | normal volume | midday,below,above,below,normal,midday,538,0.621
+59,uptrend | below VWAP | normal volume | midday,above,above,below,normal,midday,970,1.12
+60,downtrend | above VWAP | normal volume | midday,below,below,above,normal,midday,1203,1.389
+61,downtrend bounce | above VWAP | normal volume | midday,above,below,above,normal,midday,766,0.885
+62,uptrend pullback | above VWAP | normal volume | midday,below,above,above,normal,midday,2323,2.683
+63,uptrend | above VWAP | normal volume | midday,above,above,above,normal,midday,4830,5.579
+64,downtrend | below VWAP | high volume | midday,below,below,below,high,midday,1184,1.368
+65,downtrend bounce | below VWAP | high volume | midday,above,below,below,high,midday,496,0.573
+66,uptrend pullback | below VWAP | high volume | midday,below,above,below,high,midday,107,0.124
+67,uptrend | below VWAP | high volume | midday,above,above,below,high,midday,247,0.285
+68,downtrend | above VWAP | high volume | midday,below,below,above,high,midday,208,0.24
+69,downtrend bounce | above VWAP | high volume | midday,above,below,above,high,midday,112,0.129
+70,uptrend pullback | above VWAP | high volume | midday,below,above,above,high,midday,420,0.485
+71,uptrend | above VWAP | high volume | midday,above,above,above,high,midday,1042,1.204
+72,downtrend | below VWAP | low volume | afternoon,below,below,below,low,afternoon,1276,1.474
+73,downtrend bounce | below VWAP | low volume | afternoon,above,below,below,low,afternoon,650,0.751
+74,uptrend pullback | below VWAP | low volume | afternoon,below,above,below,low,afternoon,465,0.537
+75,uptrend | below VWAP | low volume | afternoon,above,above,below,low,afternoon,657,0.759
+76,downtrend | above VWAP | low volume | afternoon,below,below,above,low,afternoon,1006,1.162
+77,downtrend bounce | above VWAP | low volume | afternoon,above,below,above,low,afternoon,732,0.845
+78,uptrend pullback | above VWAP | low volume | afternoon,below,above,above,low,afternoon,1219,1.408
+79,uptrend | above VWAP | low volume | afternoon,above,above,above,low,afternoon,2113,2.441
+80,downtrend | below VWAP | normal volume | afternoon,below,below,below,normal,afternoon,2438,2.816
+81,downtrend bounce | below VWAP | normal volume | afternoon,above,below,below,normal,afternoon,1069,1.235
+82,uptrend pullback | below VWAP | normal volume | afternoon,below,above,below,normal,afternoon,450,0.52
+83,uptrend | below VWAP | normal volume | afternoon,above,above,below,normal,afternoon,670,0.774
+84,downtrend | above VWAP | normal volume | afternoon,below,below,above,normal,afternoon,915,1.057
+85,downtrend bounce | above VWAP | normal volume | afternoon,above,below,above,normal,afternoon,507,0.586
+86,uptrend pullback | above VWAP | normal volume | afternoon,below,above,above,normal,afternoon,1088,1.257
+87,uptrend | above VWAP | normal volume | afternoon,above,above,above,normal,afternoon,2388,2.758
+88,downtrend | below VWAP | high volume | afternoon,below,below,below,high,afternoon,779,0.9
+89,downtrend bounce | below VWAP | high volume | afternoon,above,below,below,high,afternoon,243,0.281
+90,uptrend pullback | below VWAP | high volume | afternoon,below,above,below,high,afternoon,107,0.124
+91,uptrend | below VWAP | high volume | afternoon,above,above,below,high,afternoon,130,0.15
+92,downtrend | above VWAP | high volume | afternoon,below,below,above,high,afternoon,185,0.214
+93,downtrend bounce | above VWAP | high volume | afternoon,above,below,above,high,afternoon,97,0.112
+94,uptrend pullback | above VWAP | high volume | afternoon,below,above,above,high,afternoon,260,0.3
+95,uptrend | above VWAP | high volume | afternoon,above,above,above,high,afternoon,536,0.619
+96,downtrend | below VWAP | low volume | close30,below,below,below,low,close30,525,0.606
+97,downtrend bounce | below VWAP | low volume | close30,above,below,below,low,close30,295,0.341
+98,uptrend pullback | below VWAP | low volume | close30,below,above,below,low,close30,128,0.148
+99,uptrend | below VWAP | low volume | close30,above,above,below,low,close30,212,0.245
+100,downtrend | above VWAP | low volume | close30,below,below,above,low,close30,293,0.338
+101,downtrend bounce | above VWAP | low volume | close30,above,below,above,low,close30,184,0.213
+102,uptrend pullback | above VWAP | low volume | close30,below,above,above,low,close30,399,0.461
+103,uptrend | above VWAP | low volume | close30,above,above,above,low,close30,742,0.857
+104,downtrend | below VWAP | normal volume | close30,below,below,below,normal,close30,687,0.793
+105,downtrend bounce | below VWAP | normal volume | close30,above,below,below,normal,close30,363,0.419
+106,uptrend pullback | below VWAP | normal volume | close30,below,above,below,normal,close30,152,0.176
+107,uptrend | below VWAP | normal volume | close30,above,above,below,normal,close30,256,0.296
+108,downtrend | above VWAP | normal volume | close30,below,below,above,normal,close30,281,0.325
+109,downtrend bounce | above VWAP | normal volume | close30,above,below,above,normal,close30,146,0.169
+110,uptrend pullback | above VWAP | normal volume | close30,below,above,above,normal,close30,368,0.425
+111,uptrend | above VWAP | normal volume | close30,above,above,above,normal,close30,756,0.873
+112,downtrend | below VWAP | high volume | close30,below,below,below,high,close30,251,0.29
+113,downtrend bounce | below VWAP | high volume | close30,above,below,below,high,close30,136,0.157
+114,uptrend pullback | below VWAP | high volume | close30,below,above,below,high,close30,33,0.038
+115,uptrend | below VWAP | high volume | close30,above,above,below,high,close30,57,0.066
+116,downtrend | above VWAP | high volume | close30,below,below,above,high,close30,65,0.075
+117,downtrend bounce | above VWAP | high volume | close30,above,below,above,high,close30,25,0.029
+118,uptrend pullback | above VWAP | high volume | close30,below,above,above,high,close30,130,0.15
+119,uptrend | above VWAP | high volume | close30,above,above,above,high,close30,176,0.203

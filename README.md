@@ -14,7 +14,8 @@ A single-page, static website that looks and behaves like an old-school terminal
 1. Open `index.html` in your browser to test the retro terminal.
 2. Open `svg.html` for a modern SVG playground with live preview and export tools.
 3. Open `todo.html` for a simple drag-and-drop todo scheduler.
-4. Deploy anywhere static (GitHub Pages, Netlify, Vercel).
+4. **Sift photo organizer** (`sift/`): sort, tag, search and clean up photos with Jev. Run `python3 sift/server.py`, then open http://localhost:8765. See [sift/README.md](sift/README.md).
+5. Deploy anywhere static (GitHub Pages, Netlify, Vercel).
 
 ### Deploy to GitHub Pages (quick)
 - Create a new GitHub repo, add these files, commit & push.

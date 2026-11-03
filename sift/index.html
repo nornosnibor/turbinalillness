@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sift · Photo Organizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%238b7cff'/><stop offset='1' stop-color='%2343c6f0'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='url(%23g)'/><path d='M9 21l5-6 4 4 3-3 3 5z' fill='white'/><circle cx='12' cy='11' r='2.4' fill='white'/></svg>" />
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div>
+          <div class="brand-name">Sift</div>
+          <div class="brand-sub">Photo organizer · with Jev</div>
+        </div>
+      </div>
+      <nav id="nav" aria-label="Library"></nav>
+      <div class="sidebar-foot">
+        <div class="storage" id="storage-meter"></div>
+        <button class="nav-item" data-action="settings"><span class="ico" data-icon="settings"></span><span>Settings</span><span class="status-dot" id="status-dot" title="Connection status"></span></button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-only" data-action="toggle-sidebar" aria-label="Menu"><span class="ico" data-icon="menu"></span></button>
+        <form class="search" id="search-form" role="search">
+          <span class="ico search-ico" data-icon="search"></span>
+          <input id="search" type="search" placeholder="Search tags, scenes, colors, cameras, dates…" autocomplete="off" aria-label="Search photos" />
+          <kbd class="search-kbd">/</kbd>
+          <button type="button" class="ask-btn" id="ask-btn" data-action="ask-jev" title="Ask Jev to look at every photo in view for this description">
+            <span class="ico" data-icon="sparkles"></span><span>Ask Jev</span>
+          </button>
+        </form>
+        <div class="topbar-actions">
+          <div class="menu-wrap">
+            <button class="btn ghost" id="filter-btn" data-action="filters"><span class="ico" data-icon="filter"></span><span class="hide-sm">Filters</span><span class="count-badge" id="filter-count" hidden></span></button>
+          </div>
+          <label class="select-wrap" title="Sort">
+            <span class="ico" data-icon="sort"></span>
+            <select id="sort" aria-label="Sort photos">
+              <option value="taken-desc">Newest first</option>
+              <option value="taken-asc">Oldest first</option>
+              <option value="added-desc">Recently added</option>
+              <option value="quality-desc">Best quality</option>
+              <option value="name-asc">Name A–Z</option>
+              <option value="size-desc">Largest files</option>
+              <option value="color">By color</option>
+            </select>
+          </label>
+          <input type="range" id="zoom" min="110" max="320" step="10" value="190" aria-label="Thumbnail size" class="zoom hide-sm" />
+          <button class="btn jev" id="analyze-btn" data-action="analyze-pending" hidden><span class="ico" data-icon="sparkles"></span><span id="analyze-label">Analyze</span></button>
+          <div class="progress-pill" id="progress" hidden>
+            <div class="spinner"></div><span id="progress-label"></span>
+            <button class="link-btn" data-action="stop">Stop</button>
+          </div>
+          <button class="btn primary" data-action="import"><span class="ico" data-icon="upload"></span><span class="hide-sm">Import</span></button>
+        </div>
+      </header>
+      <div class="chipbar" id="chipbar" hidden></div>
+      <section class="view" id="view" tabindex="-1">
+        <div class="empty" id="boot-hint">
+          <h2>Sift needs its little server</h2>
+          <p>Open a terminal in the <code>sift</code> folder, run <code>python3 server.py</code>, then visit <b>http://localhost:8765</b>. Opening index.html directly won't work.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Bulk selection bar -->
+  <div class="selection-bar" id="selection-bar" hidden>
+    <span class="sel-count" id="sel-count"></span>
+    <div class="sel-actions">
+      <button class="btn ghost" data-action="sel-fav"><span class="ico" data-icon="heart"></span><span class="hide-sm">Favorite</span></button>
+      <button class="btn ghost" data-action="sel-tag"><span class="ico" data-icon="tag"></span><span class="hide-sm">Tag</span></button>
+      <button class="btn ghost" data-action="sel-album"><span class="ico" data-icon="folder"></span><span class="hide-sm">Album</span></button>
+      <button class="btn ghost" data-action="sel-analyze"><span class="ico" data-icon="sparkles"></span><span class="hide-sm">Analyze</span></button>
+      <button class="btn ghost" data-action="sel-zip"><span class="ico" data-icon="download"></span><span class="hide-sm">Download</span></button>
+      <button class="btn ghost danger" data-action="sel-delete"><span class="ico" data-icon="trash"></span><span class="hide-sm">Delete</span></button>
+    </div>
+    <button class="icon-btn" data-action="sel-clear" aria-label="Clear selection"><span class="ico" data-icon="x"></span></button>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <div class="lb-stage">
+      <div class="lb-top">
+        <button class="icon-btn" data-action="lb-close" aria-label="Close"><span class="ico" data-icon="x"></span></button>
+        <div class="lb-title" id="lb-title"></div>
+        <div class="lb-tools">
+          <button class="icon-btn" data-action="lb-fav" aria-label="Favorite" id="lb-fav"><span class="ico" data-icon="heart"></span></button>
+          <button class="icon-btn" data-action="lb-download" aria-label="Download"><span class="ico" data-icon="download"></span></button>
+          <button class="icon-btn" data-action="lb-delete" aria-label="Delete"><span class="ico" data-icon="trash"></span></button>
+          <button class="icon-btn" data-action="lb-info" aria-label="Toggle info"><span class="ico" data-icon="info"></span></button>
+        </div>
+      </div>
+      <button class="lb-nav prev" data-action="lb-prev" aria-label="Previous"><span class="ico" data-icon="chevron-left"></span></button>
+      <img id="lb-img" alt="" />
+      <button class="lb-nav next" data-action="lb-next" aria-label="Next"><span class="ico" data-icon="chevron-right"></span></button>
+    </div>
+    <aside class="lb-panel" id="lb-panel"></aside>
+  </div>
+
+  <!-- Generic modal -->
+  <div class="modal-backdrop" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" id="modal-box"></div>
+  </div>
+
+  <!-- Popover (filters / menus) -->
+  <div class="popover" id="popover" hidden></div>
+
+  <div class="drop-overlay" id="drop-overlay" hidden>
+    <div class="drop-card"><span class="ico" data-icon="upload"></span><div>Drop photos or folders to import</div></div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <input type="file" id="file-input" accept="image/*" multiple hidden />
+  <input type="file" id="folder-input" webkitdirectory multiple hidden />
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
